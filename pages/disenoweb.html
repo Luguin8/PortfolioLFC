@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Web - LFC LABS</title>
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="../styles/index.css">
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Internacionalización -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/22.5.0/i18next.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-http-backend/2.2.2/i18nextHttpBackend.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- SweetAlert2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- ================= HEADER FIJO ================= -->
+    <div data-include="../components/header.html"></div>
+    <!-- ================= MENÚ LATERAL ================= -->
+    <div data-include="../components/sidebar.html"></div>
+    <!-- ================= BOTONES FLOTANTES ================= -->
+    <div data-include="../components/float-buttons.html"></div>
+
+    <!-- ================= INTRODUCCIÓN SERVICIOS ================= -->
+    <section class="subpage-intro">
+        <div class="content">
+            <h2>Diseño Web Profesional</h2>
+            <p>Creamos sitios web modernos, responsivos y optimizados para brindar la mejor experiencia a tus usuarios.</p>
+            <!-- Botón para abrir el quiz de recomendación -->
+            <button id="openQuiz" class="quiz-open-btn">Descubre tu Web Ideal</button>
+        </div>
+    </section>
+
+    <!-- ================= SECCIÓN DE SERVICIOS ================= -->
+    <section class="services-section">
+        <div class="services-container">
+            <!-- Servicio: One Page -->
+            <div class="service-card">
+                <div class="service-features">
+                    <h3>One Page</h3>
+                    <ul>
+                        <li>Diseño moderno y responsive</li>
+                        <li>Navegación fluida</li>
+                        <li>Optimización SEO</li>
+                        <li>Formulario de contacto</li>
+                        <li>Integración con redes sociales</li>
+                        <li>Animaciones suaves</li>
+                    </ul>
+                </div>
+                <div class="service-content">
+                    <div class="service-description">
+                        <p>Sitio web de una página ideal para presentar tu negocio o servicio de manera concisa y efectiva. Perfecto para empresas que buscan una presencia web profesional con toda la información esencial en una sola página.</p>
+                        <p>Incluye todas las secciones necesarias organizadas de manera intuitiva y atractiva, con un diseño moderno que se adapta a todos los dispositivos.</p>
+                    </div>
+                    <div class="service-actions">
+                        <a href="portfolio.html?filter=onepage#projects" class="action-btn">Ver Ejemplos</a>
+                        <a href="contacto.html#formulario" class="action-btn">Cotizar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Servicio: Institucional -->
+            <div class="service-card">
+                <div class="service-features">
+                    <h3>Institucional</h3>
+                    <ul>
+                        <li>Múltiples secciones personalizables</li>
+                        <li>Panel de administración</li>
+                        <li>Blog integrado</li>
+                        <li>Integración con redes sociales</li>
+                        <li>Sistema de usuarios</li>
+                        <li>Gestión de contenido</li>
+                    </ul>
+                </div>
+                <div class="service-content">
+                    <div class="service-description">
+                        <p>Sitio web corporativo completo con múltiples páginas y funcionalidades avanzadas. Solución completa para empresas que necesitan una presencia web robusta con gestión de contenido y funcionalidades avanzadas.</p>
+                        <p>Ideal para organizaciones que requieren una plataforma completa para mostrar sus productos, servicios y mantener actualizada su información corporativa.</p>
+                    </div>
+                    <div class="service-actions">
+                        <a href="portfolio.html?filter=institucional#projects" class="action-btn">Ver Ejemplos</a>
+                        <a href="contacto.html#formulario" class="action-btn">Cotizar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Servicio: Personalizado -->
+            <div class="service-card">
+                <div class="service-features">
+                    <h3>Personalizado</h3>
+                    <ul>
+                        <li>Diseño único y exclusivo</li>
+                        <li>Funcionalidades a medida</li>
+                        <li>Integración con sistemas externos</li>
+                        <li>Soporte premium</li>
+                        <li>Escalabilidad garantizada</li>
+                        <li>Soluciones empresariales</li>
+                    </ul>
+                </div>
+                <div class="service-content">
+                    <div class="service-description">
+                        <p>Desarrollo web completamente personalizado según tus necesidades específicas. Para proyectos que requieren soluciones únicas y específicas, con funcionalidades avanzadas y personalizadas.</p>
+                        <p>Perfecto para empresas que necesitan una solución web única que se adapte perfectamente a sus procesos y objetivos específicos.</p>
+                    </div>
+                    <div class="service-actions">
+                        <a href="portfolio.html?filter=personalizado#projects" class="action-btn">Ver Ejemplos</a>
+                        <a href="contacto.html#formulario" class="action-btn">Cotizar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <div data-include="../components/footer.html"></div>
+
+    <!-- ================= MODAL QUIZ ================= -->
+    <div id="quizModal" class="quiz-modal">
+        <!-- Modal quiz reutilizado, ver js/disenoweb.js para lógica -->
+        <div class="quiz-modal-content">
+            <div class="quiz-modal-header">
+                <h2>Descubre el Sitio Web Ideal para Ti</h2>
+                <button class="quiz-close">&times;</button>
+            </div>
+            <div class="quiz-modal-body">
+                <!-- Paso 1 -->
+                <div class="quiz-step" data-step="1">
+                    <h3>¿Qué tipo de presencia online necesitas?</h3>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="presence" value="1">
+                            <span class="option-text">Solo quiero mostrar información básica de mi negocio</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="presence" value="2">
+                            <span class="option-text">Necesito mostrar productos/servicios pero sin venta online</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="presence" value="3">
+                            <span class="option-text">Quiero un sitio completo con blog y funcionalidades avanzadas</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- Paso 2 -->
+                <div class="quiz-step" data-step="2" style="display: none;">
+                    <h3>¿Cuánto contenido planeas tener?</h3>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="content" value="1">
+                            <span class="option-text">Poco contenido, información concisa</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="content" value="2">
+                            <span class="option-text">Contenido moderado, varias secciones</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="content" value="3">
+                            <span class="option-text">Mucho contenido, actualización frecuente</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- Paso 3 -->
+                <div class="quiz-step" data-step="3" style="display: none;">
+                    <h3>¿Qué presupuesto tienes en mente?</h3>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="budget" value="1">
+                            <span class="option-text">Presupuesto ajustado, necesito algo básico</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="budget" value="2">
+                            <span class="option-text">Presupuesto moderado, quiero algo profesional</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="budget" value="3">
+                            <span class="option-text">Presupuesto flexible, busco lo mejor</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- Resultado -->
+                <div class="quiz-step quiz-result" data-step="result" style="display: none;">
+                    <h3>Tu Resultado</h3>
+                    <div class="result-content"></div>
+                    <a href="contacto.html#formulario" class="contact-btn">Solicitar Cotización</a>
+                </div>
+            </div>
+            <div class="quiz-modal-footer">
+                <div class="quiz-progress">
+                    <div class="progress-bar"></div>
+                </div>
+                <span class="step-indicator">Paso <span class="current-step">1</span> de 3</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="../js/include.js"></script>
+    <script src="../js/disenoweb.js"></script>
+</body>
+</html> 
